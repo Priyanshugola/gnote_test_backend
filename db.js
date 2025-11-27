@@ -16,7 +16,7 @@
 const mongoose = require('mongoose');
 
 // Use environment variable for security (recommended)
-const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://priyanshu306study_db_user:DLvk6HjuzYzrZuTq@gnote.gtdtupn.mongodb.net/user_master";
+const MONGO_URI ="mongodb+srv://priyanshu306study_db_user:DLvk6HjuzYzrZuTq@gnote.gtdtupn.mongodb.net/user_master";
 
 // Async function to connect to MongoDB
 const connectDB = async () => {
