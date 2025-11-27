@@ -23,14 +23,14 @@
 // // export default app;
 // exports.app = app;
 console.log("ss");
-const conn = require('./db.js');
+const connectDB = require('./db.js');
 const express = require('express');
 var cors = require('cors')
-conn();
+connectDB();
 const app = express();
 app.use(cors())
 const port = 5000; 
-conn().then(() => console.log("Database Connected ✅"));
+connectDB().then(() => console.log("Database Connected ✅"));
 // app.get('/',(req, res)=>{
 //     res.send('hello world')
 // })
