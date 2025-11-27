@@ -30,6 +30,7 @@ conn();
 const app = express();
 app.use(cors())
 const port = 5000; 
+conn().then(() => console.log("Database Connected ✅"));
 // app.get('/',(req, res)=>{
 //     res.send('hello world')
 // })
