@@ -23,10 +23,10 @@
 // // export default app;
 // exports.app = app;
 console.log("ss");
-// const conn = require('./db.js');
+const conn = require('./db.js');
 const express = require('express');
 var cors = require('cors')
-// conn();
+conn();
 const app = express();
 app.use(cors())
 const port = 5000; 
