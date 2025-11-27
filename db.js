@@ -17,8 +17,9 @@ const mongoose = require('mongoose');
 
 // ✅ MongoDB Atlas ka connection URI yaha paste karo
 // const mongouri = "mongodb+srv://priyanshu306study_db_user:DLvk6HjuzYzrZuTq@gnote.gtdtupn.mongodb.net/user_master?retryWrites=true&w=majority";
-// const mongouri = "mongodb+srv://priyanshu306study_db_user:DLvk6HjuzYzrZuTq@gnote.gtdtupn.mongodb.net/user_master?retryWrites=true&w=majority";
-const mongouri = process.env.MONGO_URI;
+const mongouri = "mongodb+srv://priyanshu306study_db_user:DLvk6HjuzYzrZuTq@gnote.gtdtupn.mongodb.net/user_master?retryWrites=true&w=majority
+";
+// const mongouri = process.env.MONGO_URI;
 
 const conn = async () => {
   try {
