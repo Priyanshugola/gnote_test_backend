@@ -24,23 +24,23 @@
 // exports.app = app;
 console.log("server loaded");  // runs when server initializes
 
-const express = require('express');
-const cors = require('cors');
-const app = express();
+// const express = require('express');
+// const cors = require('cors');
+// const app = express();
 
-app.use(cors());
-app.use(express.json());
+// app.use(cors());
+// app.use(express.json());
 
-// INDEX console log
-app.get("/", (req, res) => {
-  console.log("Index route hit");  // <-- YOU WANTED THIS
-  res.send("Backend is working!");
-});
+// // INDEX console log
+// app.get("/", (req, res) => {
+//   console.log("Index route hit");  // <-- YOU WANTED THIS
+//   res.send("Backend is working!");
+// });
 
-// ROUTES
-app.use("/", require("../router/Auth"));
-app.use("/", require("../router/Note"));
+// // ROUTES
+// app.use("/", require("../router/Auth"));
+// app.use("/", require("../router/Note"));
 
-// Vercel requires this:
-module.exports = app;
+// // Vercel requires this:
+// module.exports = app;
 
