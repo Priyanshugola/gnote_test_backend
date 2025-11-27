@@ -15,23 +15,21 @@
 // module.exports = conn;
 const mongoose = require('mongoose');
 
-// ✅ MongoDB Atlas ka connection URI yaha paste karo
-// const mongouri = "mongodb+srv://priyanshu306study_db_user:DLvk6HjuzYzrZuTq@gnote.gtdtupn.mongodb.net/user_master?retryWrites=true&w=majority";
-const mongouri = "mongodb+srv://priyanshu306study_db_user:DLvk6HjuzYzrZuTq@gnote.gtdtupn.mongodb.net/user_master";
+// Use environment variable for security (recommended)
+const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://priyanshu306study_db_user:DLvk6HjuzYzrZuTq@gnote.gtdtupn.mongodb.net/user_master";
 
-// const mongouri = process.env.MONGO_URI;
-
-const conn = async () => {
+// Async function to connect to MongoDB
+const connectDB = async () => {
   try {
-    await mongoose.connect(mongouri, {
+    await mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     });
     console.log('✅ MongoDB Atlas Connected Successfully');
-  } catch (err) {
-    console.error('❌ MongoDB Connection Error:', err);
+  } catch (error) {
+    console.error('❌ MongoDB Connection Error:', error);
+    process.exit(1); // Exit process on failure
   }
 };
 
-module.exports = conn;
-
+module.exports = connectDB;
