@@ -19,7 +19,8 @@ router.post('/api/auth',[
     }
     try {
     const { Name, Mail, Password } = req.body;
-    const existingUser  = await User.findOne({Mail : req.body.Mail});
+    // const existingUser  = await User.findOne({Mail : req.body.Mail});
+        const existingUser = await User.findOne({Mail : req.body.Mail});
     
     if(existingUser ){
       return res.status(400).json({error :"user mail already exist"})
@@ -47,7 +48,7 @@ router.post('/api/auth',[
     }
     catch(err)  {
         console.log('Database error:', err);
-        res.status(500).send({ message: err });
+        res.status(500).send({ message: 'Error saving user'  });
       };
 })
 
