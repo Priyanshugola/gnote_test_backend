@@ -49,7 +49,8 @@ router.post('/api/auth',[
     }
     catch(err)  {
         console.log('Database error:', err);
-        res.status(500).send({ message: 'Error saving user'  });
+       res.status(500).json({ success: false, message: 'Error saving user', error: err.message });
+
       };
 })
 
