@@ -20,8 +20,9 @@ router.post('/api/auth',[
     try {
     const { Name, Mail, Password } = req.body;
     // const existingUser  = await User.findOne({Mail : req.body.Mail});
-        const existingUser = await User.findOne({Mail : req.body.Mail});
-    
+        // const existingUser = await User.findOne({Mail : req.body.Mail});
+    const existingUser = await User.findOne({ Mail });
+
     if(existingUser ){
       return res.status(400).json({error :"user mail already exist"})
     }
