@@ -13,8 +13,10 @@ const port = 5000;
 app.use(express.json())
 app.use("/", require('./router/Auth'));
 app.use("/", require('./router/Note'));
-
-app.use("/", console.log("ss"););
+app.use("/", (req, res, next) => {
+  console.log("ss");
+  next(); // Continue to the next middleware
+});
 // app.listen(port,()=>{
 //     console.log(`Example port on http://localhost:${port}`)
 // })d
