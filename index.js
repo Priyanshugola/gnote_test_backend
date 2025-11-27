@@ -20,4 +20,5 @@ app.use("/", (req, res, next) => {
 // app.listen(port,()=>{
 //     console.log(`Example port on http://localhost:${port}`)
 // })d
-export default app;
+// export default app;
+exports.app = app;
