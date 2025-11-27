@@ -38,7 +38,7 @@ app.use(express.json())
 // INDEX route + console log
 app.get("/", (req, res) => {
   console.log("Index route hit");     // <-- YOU WANTED THIS
-  // res.send("Backend is working root index.js !");
+  res.send("Backend is working root index.js !");
 });
 
 app.use("/", require('./router/Auth'));
