@@ -21,11 +21,11 @@ router.post('/api/auth',[
     const { Name, Mail, Password } = req.body;
     // const existingUser  = await User.findOne({Mail : req.body.Mail});
         // const existingUser = await User.findOne({Mail : req.body.Mail});
-    const existingUser = await User.findOne({ Mail });
+    // const existingUser = await User.findOne({ Mail });
 
-    if(existingUser ){
-      return res.status(400).json({error :"user mail already exist"})
-    }
+    // if(existingUser ){
+    //   return res.status(400).json({error :"user mail already exist"})
+    // }
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(Password,salt)
     const newuser = new User({
